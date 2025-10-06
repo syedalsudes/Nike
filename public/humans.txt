@@ -1,0 +1,7 @@
+/* TEAM */
+Developer: Syed Al-sudes
+Website: https://nike.vercel.app
+Twitter: https://twitter.com/nike
+
+/* THANKS */
+Made with ❤️ by Syed Al-sudes

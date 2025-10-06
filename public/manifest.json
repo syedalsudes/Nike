@@ -1,0 +1,16 @@
+{
+  "name": "Nike Official Store",
+  "short_name": "Nike",
+  "description": "Shop the latest Nike shoes, apparel, and accessories.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/nike.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
