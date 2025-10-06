@@ -6,6 +6,7 @@ const nextConfig = {
     images: {
         domains: ["template-03-api.vercel.app"],
     },
+    swcMinify: false, 
 };
 
 export default nextConfig;
