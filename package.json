@@ -10,7 +10,6 @@
     "import-data": "ts-node script/data-migration.mjs"
   },
   "dependencies": {
-    "@next/swc-win32-x64-msvc": "^15.1.7",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "esbuild": "^0.25.0",
