@@ -6,7 +6,7 @@ This project is designed for educational and showcase purposes — inspired by N
 ---
 
 ## 🚀 Live Demo
-**[🌐 Visit Website](https://nike.vercel.app)**  
+**[🌐 Visit Website](https://soleflex.vercel.app)**  
 Hosted on **Vercel**
 
 ---
