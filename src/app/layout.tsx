@@ -5,6 +5,7 @@ import localFont from "next/font/local"
 import "./globals.css"
 import { CartProvider } from "@/contexts/CartContext"
 import { FavoritesProvider } from "@/contexts/FavoritesContext"
+import Script from "next/script"
 
 const Header = dynamic(() => import("@/components/Header"))
 const Footer = dynamic(() => import("@/components/Footer"))
@@ -68,14 +69,22 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Run theme script before anything else */}
+        <Script id="theme-script" strategy="beforeInteractive">
+          {`
+            (function() {
+              try {
+                const theme = localStorage.getItem('theme') || 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+              } catch (_) {}
+            })();
+          `}
+        </Script>
+
         <CartProvider>
           <FavoritesProvider>
             <GlobalLoader />

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { Search, X } from "lucide-react"
 import Link from "next/link"
 
-export default function SearchBar() {
+export default function SearchBar({ onResultClick }: { onResultClick?: () => void }) {
     const [query, setQuery] = useState("")
     const [products, setProducts] = useState<{ productName: string; id: number }[]>([])
     const [filtered, setFiltered] = useState<{ productName: string; id: number }[]>([])
@@ -64,10 +64,14 @@ export default function SearchBar() {
                             key={p.id}
                             href={`/blog/${p.id}`}
                             className="block px-4 py-2 text-sm hover:bg-gray100 transition-colors"
-                            onClick={handleClear}
+                            onClick={() => {
+                                handleClear()
+                                onResultClick && onResultClick()
+                            }}
                         >
                             {p.productName}
                         </Link>
+
                     ))}
                 </div>
             )}

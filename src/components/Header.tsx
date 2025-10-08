@@ -120,7 +120,7 @@ export default function Header() {
           {/* Mobile Search (Full Width) */}
           {width <= 768 && mobileMenuOpen && (
             <div className="flex items-center bg-muted rounded-full px-4 py-2 mt-4 w-full">
-              <SearchBar />
+              <SearchBar onResultClick={() => setMobileMenuOpen(false)} />
             </div>
           )}
 
