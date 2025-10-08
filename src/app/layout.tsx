@@ -21,12 +21,12 @@ const geistMono = localFont({
   weight: "100 900",
 })
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nike.vercel.app"
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://soleflex.vercel.app"
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Nike Official Store | Just Do It",
+    default: "Nike Store | Just Do It",
     template: "%s | Nike",
   },
   description:

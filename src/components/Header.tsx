@@ -143,8 +143,12 @@ export default function Header() {
             {width <= 425 && (
               <div className="mt-6 flex gap-6 items-center border-t border-border pt-4">
                 <ThemeToggle />
-                <Link href="/favorites" className="relative hover:opacity-70 transition-opacity">
-                  <Heart className="w-5 h-5 md:w-6 md:h-6 text-red-500" />
+                <Link
+                  href="/favorites"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="relative hover:opacity-70 transition-opacity"
+                >
+                  <Heart className="w-6 h-6 md:w-6 md:h-6 text-red-500" />
                   {favoritesCount > 0 && (
                     <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">
                       {favoritesCount}
@@ -152,8 +156,12 @@ export default function Header() {
                   )}
                 </Link>
 
-                <Link href="/addtocard" className="relative hover:opacity-70 transition-opacity">
-                  <ShoppingBag className="w-5 h-5 md:w-6 md:h-6 text-blue-600" />
+                <Link
+                  href="/addtocard"
+                  onClick={() => setMobileMenuOpen(false)}  // <-- add this too
+                  className="relative hover:opacity-70 transition-opacity"
+                >
+                  <ShoppingBag className="w-6 h-6 md:w-6 md:h-6 text-blue-600" />
                   {cartCount > 0 && (
                     <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">
                       {cartCount}

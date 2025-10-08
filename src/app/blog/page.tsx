@@ -17,13 +17,17 @@ export default function Blog() {
 
   const toggleSidebar = () => setShowSidebar(!showSidebar)
 
-  // Detect screen size
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1024)
+
     handleResize()
+
+    if (window.innerWidth < 1025) setShowSidebar(false)
+
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
+
 
   return (
     <div className="blog-container p-2 sm:p-4 lg:p-6 relative">
@@ -43,14 +47,15 @@ export default function Blog() {
       <div className="flex flex-col lg:flex-row gap-4">
         {/* Sidebar for Desktop (normal show/hide) */}
         {!isMobile && showSidebar && (
-          <div className="w-full lg:w-64 shrink-0 transition-all duration-300">
+          <div className="w-full lg:w-64 shrink-0 transition-all duration-500 ease-in-out">
             <BlogSlideBar onFilter={setFilters} />
           </div>
         )}
 
+
         {/* Main Content */}
-        <div className="flex-1 min-w-0">
-          <CardProducts filters={filters} />
+        <div className="flex-1 min-w-0 transition-all duration-500 ease-in-out">
+          <CardProducts filters={filters} showSidebar={showSidebar} />
         </div>
       </div>
 

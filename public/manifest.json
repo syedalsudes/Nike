@@ -1,12 +1,21 @@
 {
-  "name": "Nike Official Store",
-  "short_name": "Nike",
-  "description": "Shop the latest Nike shoes, apparel, and accessories.",
+  "name": "Nike Store | Soleflex",
+  "short_name": "Soleflex",
+  "description": "Shop the latest Nike shoes, apparel, and accessories — designed for performance, comfort, and style. Just Do It.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#000000",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
+    {
+      "src": "/nike.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
     {
       "src": "/nike.svg",
       "sizes": "512x512",

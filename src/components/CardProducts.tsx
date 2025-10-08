@@ -7,13 +7,15 @@ import LoadingSpinner from "@/components/LoadingSpinner"
 
 interface CardProductsProps {
   filters: {
-    categories: string[],
-    gender: string[],
+    categories: string[]
+    gender: string[]
     price: string[]
   }
+  showSidebar: boolean
 }
 
-const CardProducts = ({ filters }: CardProductsProps) => {
+
+const CardProducts: React.FC<CardProductsProps> = ({ filters, showSidebar }) => {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -61,11 +63,17 @@ const CardProducts = ({ filters }: CardProductsProps) => {
   if (filteredProducts.length === 0) return <div className="text-center mt-10">No products found.</div>
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-8">
+    <div
+      className={`grid gap-6 p-4 sm:p-8 
+                grid-cols-1 sm:grid-cols-2 
+                ${showSidebar
+          ? "md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
+          : "md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"}`}
+    >
       {filteredProducts.map((product, index) => (
         <Link key={index} href={`/blog/${index}`} className="group">
           <div className="flex flex-col h-full bg-background border border-gray800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-            
+
             {/* Image */}
             <div className="relative w-full aspect-square bg-background overflow-hidden p-[7px]">
               <div className="relative w-full h-full rounded-lg overflow-hidden">
